@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSC Application</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript" src="assets/js/google_jsapi.js"></script>
+
+<script type="text/javascript">
+    google.load("elements", "1", { packages: "transliteration" });
+</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/JsBarcode.all.min.js"></script>
+
+<!-- <script src="/node_modules/angular-barcode/dist/angular-barcode.js"></script> -->
+
+<link rel="stylesheet" href="styles.272d5966252296a139b6.css"></head>
+<body>
+  <app-root></app-root>
+  <script>
+    function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [ google.elements.transliteration.LanguageCode.HINDI ],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        var control = new google.elements.transliteration.TransliterationControl(options);
+        // control.makeTransliteratable([ "txtHindi" ]);
+        control.makeTransliteratable([ "txtHindi1" ]);
+        control.makeTransliteratable([ "txtHindi12" ]);
+        control.makeTransliteratable([ "txtHindi13" ]);
+        
+        var keyVal = 32; // Space key
+        // $("#txtEnglish").on('keydown', function (event) {
+        //     if (event.keyCode === 32) {
+        //         var engText = $("#txtEnglish").val() + " ";
+        //         var engTextArray = engText.split(" ");
+        //         $("#txtHindi").val($("#txtHindi").val() + engTextArray[ engTextArray.length - 2 ]);
+
+        //         document.getElementById("txtHindi").focus();
+        //         $("#txtHindi").trigger({
+        //             type: 'keypress', keyCode: keyVal, which: keyVal, charCode: keyVal
+        //         });
+        //     }
+        // });
+        
+        // $("#txtEnglish1").on('keydown', function (event) {
+        //     if (event.keyCode === 32) {
+        //         var engText = $("#txtEnglish1").val() + " ";
+        //         var engTextArray = engText.split(" ");
+        //         $("#txtHindi1").val($("#txtHindi1").val() + engTextArray[ engTextArray.length - 2 ]);
+
+        //         document.getElementById("txtHindi1").focus();
+        //         $("#txtHindi1").trigger({
+        //             type: 'keypress', keyCode: keyVal, which: keyVal, charCode: keyVal
+        //         });
+        //     }
+        // });
+
+
+        // $("#txtHindi").bind("keyup", function (event) {
+        //     setTimeout(function () { $("#txtEnglish").val($("#txtEnglish").val() + " "); document.getElementById("txtEnglish").focus() }, 0);
+        // });
+    } //end onLoad function
+
+    google.setOnLoadCallback(onLoad);
+</script>
+<script src="runtime-es2015.66c79b9d36e7169e27b0.js" type="module"></script><script src="runtime-es5.66c79b9d36e7169e27b0.js" nomodule defer></script><script src="polyfills-es5.904d737bcd5be72326bb.js" nomodule defer></script><script src="polyfills-es2015.c8d27e441060f6f00b29.js" type="module"></script><script src="scripts.01e2f04651d3ba69f4e0.js" defer></script><script src="main-es2015.75a0fae354faa38e1a94.js" type="module"></script><script src="main-es5.75a0fae354faa38e1a94.js" nomodule defer></script></body>
+</html>
