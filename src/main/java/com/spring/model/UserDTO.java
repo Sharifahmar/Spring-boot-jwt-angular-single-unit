@@ -5,6 +5,10 @@ public class UserDTO {
 	private String username;
 
 	private String password;
+	
+	private String fromDate;
+	
+	private String toDate;
 
 	public String getUsername() {
 		return username;
@@ -22,4 +26,21 @@ public class UserDTO {
 		this.password = password;
 	}
 
+	public String getFromDate() {
+		return fromDate;
+	}
+
+	public void setFromDate(String fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public String getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(String toDate) {
+		this.toDate = toDate;
+	}
+
+	
 }

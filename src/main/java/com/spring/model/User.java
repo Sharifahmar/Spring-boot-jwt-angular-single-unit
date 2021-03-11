@@ -2,6 +2,8 @@ package com.spring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,12 @@ public class User {
 	@Column
 	@JsonIgnore
 	private String password;
+	
+	@Column
+	private Date fromDate;
+	
+	@Column
+	private Date toDate;
 
 	public long getId() {
 		return id;
@@ -24,7 +32,6 @@ public class User {
 		this.id = id;
 	}
 
-	
 
 	public String getUsername() {
 		return username;
@@ -41,5 +48,22 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Date getFromDate() {
+		return fromDate;
+	}
+
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public Date getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+	
 
 }
