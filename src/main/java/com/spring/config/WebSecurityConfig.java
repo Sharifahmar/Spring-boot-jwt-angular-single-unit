@@ -27,7 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 			// -- swagger ui
 			"/swagger-resources/configuration/security", "/swagger-resources/configuration/ui", "/swagger-resources",
-			"/swagger-ui.html", "/v2/api-docs", "/webjars/**", "/token/*", "/signup", "/assets/*","/extend-validity","/loggedInUserInfo"
+			"/swagger-ui.html", "/v2/api-docs", "/webjars/**", "/token/*", "/signup", "/assets/*","/extend-validity","/loggedInUserInfo",
+			"/**"
 
 	};
 
@@ -63,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 //	@Override
 //	public void configure(WebSecurity web) throws Exception {
-//		web.ignoring().antMatchers(HttpMethod.GET, "/**");
+//		web.ignoring().antMatchers(HttpMethod.GET, "/*");
 //	}
 
 	@Bean
