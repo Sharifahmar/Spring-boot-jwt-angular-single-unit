@@ -1,20 +1,11 @@
 package com.spring.model;
 
 public class ExtendValidityDTO {
-	
-    private String fromDate;
-	
+		
 	private String toDate;
 	
 	private String username;
 
-	public String getFromDate() {
-		return fromDate;
-	}
-
-	public void setFromDate(String fromDate) {
-		this.fromDate = fromDate;
-	}
 
 	public String getToDate() {
 		return toDate;

@@ -1,11 +1,9 @@
 package com.spring.service.impl;
 
-import com.spring.dao.UserDao;
-import com.spring.model.ExtendValidityDTO;
-import com.spring.model.User;
-import com.spring.model.UserDTO;
-import com.spring.service.UserService;
-import com.spring.utils.CommonUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,10 +14,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import com.spring.dao.UserDao;
+import com.spring.model.ExtendValidityDTO;
+import com.spring.model.User;
+import com.spring.model.UserDTO;
+import com.spring.service.UserService;
+import com.spring.utils.CommonUtils;
 
 @Service(value = "userService")
 public class UserServiceImpl implements UserDetailsService, UserService {
@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 		User newUser = new User();
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		newUser.setFromDate(CommonUtils.stringTodate(user.getFromDate()));
+		newUser.setCreatedDate(CommonUtils.stringTodate(user.getCreatedDate()));
 		newUser.setToDate(CommonUtils.stringTodate(user.getToDate()));
 		return userDao.save(newUser);
 
@@ -85,7 +85,6 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 		String message = null;
 		Optional<User> user = Optional.ofNullable(userDao.findByUsername(exDto.getUsername()));
 		if (user.isPresent()) {
-			user.get().setFromDate(CommonUtils.stringTodate(exDto.getFromDate()));
 			user.get().setToDate(CommonUtils.stringTodate(exDto.getToDate()));
 			User userUpdate = userDao.save(user.get());
 			if (!ObjectUtils.isEmpty(userUpdate)) {

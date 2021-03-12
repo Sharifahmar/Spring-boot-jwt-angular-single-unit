@@ -1,11 +1,5 @@
 package com.spring.controller;
 
-import com.spring.config.JwtTokenUtil;
-import com.spring.model.AuthToken;
-import com.spring.model.LoginUser;
-import com.spring.model.User;
-import com.spring.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.config.JwtTokenUtil;
+import com.spring.model.AuthToken;
+import com.spring.model.LoginUser;
+import com.spring.model.User;
+import com.spring.service.UserService;
 
 @RestController
 @RequestMapping("/token")

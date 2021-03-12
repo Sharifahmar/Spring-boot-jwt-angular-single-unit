@@ -6,7 +6,7 @@ public class UserDTO {
 
 	private String password;
 	
-	private String fromDate;
+	private String createdDate;
 	
 	private String toDate;
 
@@ -26,12 +26,13 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public String getFromDate() {
-		return fromDate;
+
+	public String getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setFromDate(String fromDate) {
-		this.fromDate = fromDate;
+	public void setCreatedDate(String createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public String getToDate() {

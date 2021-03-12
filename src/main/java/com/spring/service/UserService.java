@@ -1,10 +1,10 @@
 package com.spring.service;
 
+import java.util.List;
+
 import com.spring.model.ExtendValidityDTO;
 import com.spring.model.User;
 import com.spring.model.UserDTO;
-
-import java.util.List;
 
 public interface UserService {
 

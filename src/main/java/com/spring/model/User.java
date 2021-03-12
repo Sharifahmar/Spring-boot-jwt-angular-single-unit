@@ -1,10 +1,14 @@
 package com.spring.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User {
@@ -19,7 +23,7 @@ public class User {
 	private String password;
 	
 	@Column
-	private Date fromDate;
+	private Date createdDate;
 	
 	@Column
 	private Date toDate;
@@ -49,12 +53,15 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getFromDate() {
-		return fromDate;
+
+
+
+	public Date getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setFromDate(Date fromDate) {
-		this.fromDate = fromDate;
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public Date getToDate() {
